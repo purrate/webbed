@@ -3,16 +3,20 @@ import Navbar from "./Header";
 
 // Import statements for images (assuming these will be in an assets folder)
 // You would need to configure your build system to handle these imports
-import moonImage from '../assets/moon.png';
-import marsImage from '../assets/mars.png';
-import venusImage from '../assets/venus.png';
+import moonImage from "../assets/moon.png";
+import marsImage from "../assets/mars.png";
+import venusImage from "../assets/venus.png";
 
 export const Landing = () => {
   const [currentDestination, setCurrentDestination] = useState(0);
   const destinations = [
     { name: "MOON", tagline: "To space and back, safely.", image: moonImage },
     { name: "MARS", tagline: "The next frontier awaits.", image: marsImage },
-    { name: "VENUS", tagline: "Experience the hottest journey.", image: venusImage },
+    {
+      name: "VENUS",
+      tagline: "Experience the hottest journey.",
+      image: venusImage,
+    },
   ];
 
   const nextDestination = () => {
@@ -46,7 +50,7 @@ export const Landing = () => {
               alt={`${destination.name} planet`}
               className="absolute w-full h-full object-cover object-center z-10"
             />
-            
+
             <div className="absolute inset-0 bg-black bg-opacity-40"></div>
             <div className="absolute inset-0 flex flex-col justify-center px-8 md:px-16 z-10">
               <p className="text-sm md:text-base mb-2">{destination.tagline}</p>
@@ -192,6 +196,7 @@ export const Landing = () => {
 
         {/* Destination Indicators */}
         <div className="absolute bottom-8 right-8 flex space-x-2 z-20">
+          <h2>Click Here!!</h2>
           {destinations.map((_, index) => (
             <button
               key={index}
